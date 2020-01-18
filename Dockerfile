@@ -24,7 +24,7 @@ RUN git clone -b ${EMQX_DEPS_DEFAULT_VSN} https://github.com/emqx/emqx-rel.git /
     && make distclean \
     && [[ ${DEPLOY} == "edge" ]] && make emqx_edge || make 
 
-FROM $RUN_FROM
+FROM alpine:3.9
 
 # Basic build-time metadata as defined at http://label-schema.org
 LABEL org.label-schema.docker.dockerfile="Dockerfile" \
